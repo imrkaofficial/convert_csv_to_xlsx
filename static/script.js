@@ -1,11 +1,19 @@
 $(document).ready(function() {
     $('#uploadForm').on('submit', function(e) {
         e.preventDefault();
+        
+        var fileInput = $('#file')[0];
+        var file = fileInput.files[0];
+        if (file.type !== 'application/vnd.ms-excel' && file.type !== 'text/csv') {
+            $('#message').text('Uploaded file is not supported. Please upload a .csv file.');
+            return;
+        }
+
         $('#message').text('Please Wait! File is converting...');
         $('#convertButton button').hide();
         $('#delimiterField').hide();
         $('#fileField').hide();
-        $('#spinner').show(); // Show the spinner
+        $('#spinner').show(); 
 
         var formData = new FormData(this);
 
@@ -25,7 +33,7 @@ $(document).ready(function() {
                 $('#tryAgainButton').show();
             },
             complete: function() {
-                $('#spinner').hide(); // Hide the spinner
+                $('#spinner').hide();
             }
         });
     });
