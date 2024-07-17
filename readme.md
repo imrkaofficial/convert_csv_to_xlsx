@@ -21,8 +21,8 @@ This project is a web application that allows users to upload a CSV file with a 
 
 1. Clone the repository:
     ```sh
-    git clone https://github.com/imrkaofficial/convert_files.git
-    cd convert_files
+    git clone https://github.com/imrkaofficial/convert_csv_to_xlsx.git
+    cd convert_csv_to_xlsx
 
 
 2. Create a virtual environment:
